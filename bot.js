@@ -22,14 +22,22 @@ client.on('messageCreate',message =>{
     if((message.content.includes("Çağrı"))||(message.content.includes("çağrı"))){
         message.reply("tten")
     }
+    if((message.content == "billurunu kemireyim")||(message.content == "Billurunu kemireyim")){
+        message.reply("Olur")
+    }
     if((message.content == "Sa")||(message.content == "sa")||(message.content == "SA")){
         message.reply("As")
     }
     if((message.content.includes("hanifi"))||(message.content.includes("Hanifi"))){
         message.reply("....");
         message.channel.send({ files: ['https://i.hizliresim.com/aa7j6a4.png']})
-        
-        
+    }
+    if((message.content.includes("ince"))||(message.content.includes("İnce"))){
+        let kelimesayisi = (message.content.match(new RegExp("İnce","g")) || []).length
+        let kelimesayisi2 = (message.content.match(new RegExp("ince","g")) || []).length
+        if ((kelimesayisi==2)||(kelimesayisi2==2)||((kelimesayisi==1)&&(kelimesayisi2==1))){
+            message.channel.send({ files: ['https://i.hizliresim.com/q2det5s.png']})
+        }
     }
     
 
