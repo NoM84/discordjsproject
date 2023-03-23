@@ -25,7 +25,7 @@ client.on('messageCreate',message =>{
         message.reply("pong")
     }
     if(message.content == "Çağrı"){
-        Message.reply("tten")
+        message.reply("tten")
     }
     if((message.content == "Sa")||(message.content == "sa")||(message.content == "SA")){
         message.reply("As")
