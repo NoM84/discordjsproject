@@ -5,7 +5,9 @@ const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.GuildVoiceStates
     ]
 });
  
@@ -23,13 +25,17 @@ client.on('messageCreate',message =>{
         message.reply("Hahaha")
     }
     if((message.content.includes("Çağrı"))||(message.content.includes("çağrı"))){
-        message.reply("tten")
+        message.react("🇬")
+        message.react('🇹')
+        message.react("🇪")
+        message.react("🇳")
     }
     if((message.content == "billurunu kemireyim")||(message.content == "Billurunu kemireyim")){
         message.reply("Olur")
     }
-    if((message.content == "Sa")||(message.content == "sa")||(message.content == "SA")){
-        message.reply("As")
+    if(message.content.toLowerCase() == 'sa'){
+        message.react("🇦")
+        message.react("🇸")
     }
     if((message.content.includes("hanifi"))||(message.content.includes("Hanifi"))){
         message.reply("....");
@@ -42,11 +48,26 @@ client.on('messageCreate',message =>{
             message.channel.send({ files: ['https://i.hizliresim.com/jhystk8.jpg']})
         }
     }
+    if((message.content == "Naber aga")||(message.content == "Naber Aga")||(message.content == "naber aga")||(message.content == "naber Aga")){
+        message.reply(`İyiyim Senden naber ${message.member.displayName}`)
+    }
+    if((message.content.includes("sik"))){
+        message.reply("Lütfen Küfür etmeyelim")
+    }
+    if(message.content.toLowerCase() == "aga"){
+        message.reply("Efendim")
+    }
+    
     
 
 
 
-});
+
+
+
+
+
+})
 
 
 
