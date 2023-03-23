@@ -15,18 +15,24 @@ client.on('ready',() =>{
 
 client.on('messageCreate',message =>{
     if(message.content == 'ping'){
-        message.reply("pong!")
-    }
-    if(message.content == "adamsın"){
-        message.reply("EYw Cigerim")
+        message.reply("pong")
     }
     if(message.content == "!sil"){
         message.channel.bulkDelete(10)
     }
+    if(message.content == "Çağrı"){
+        Message.reply("tten")
+    }
+    if((message.content == "Sa")||(message.content == "sa")||(message.content == "SA")){
+        message.reply("As")
+    }
+    
 
 
 
-})
+});
+
+
 
 
 
