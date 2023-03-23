@@ -11,14 +11,18 @@ const client = new Client({
 
 client.on('ready',() =>{
     console.log("Merhaba Diyor!");
+    client.user.setPresence({
+        status: "online",
+        activity: {
+            name: "Deneme 1 2 3",
+            type: "PLAYING"
+        }
+    });
 });
 
 client.on('messageCreate',message =>{
     if(message.content == 'ping'){
         message.reply("pong")
-    }
-    if(message.content == "!sil"){
-        message.channel.bulkDelete(10)
     }
     if(message.content == "Çağrı"){
         Message.reply("tten")
