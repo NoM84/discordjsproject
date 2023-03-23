@@ -19,6 +19,9 @@ client.on('messageCreate',message =>{
     if(message.content == 'ping'){
         message.reply("pong")
     }
+    if(message.content =="ehehe"){
+        message.reply("Hahaha")
+    }
     if((message.content.includes("Çağrı"))||(message.content.includes("çağrı"))){
         message.reply("tten")
     }
@@ -36,7 +39,7 @@ client.on('messageCreate',message =>{
         let kelimesayisi = (message.content.match(new RegExp("İnce","g")) || []).length
         let kelimesayisi2 = (message.content.match(new RegExp("ince","g")) || []).length
         if ((kelimesayisi==2)||(kelimesayisi2==2)||((kelimesayisi==1)&&(kelimesayisi2==1))){
-            message.channel.send({ files: ['https://i.hizliresim.com/q2det5s.png']})
+            message.channel.send({ files: ['https://i.hizliresim.com/jhystk8.jpg']})
         }
     }
     
