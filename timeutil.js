@@ -1,17 +1,16 @@
-function HedefeKalanZamaniBul(saat,dakika) {
+function HedefeKalanZamaniBul(saat, dakika) {
     const hedefTarih = new Date();
-    hedefTarih.setHours(saat);
-    hedefTarih.setMinutes(dakika);
-    hedefTarih.setSeconds(0);
-    hedefTarih.setMilliseconds(0);
-
-
+    hedefTarih.setUTCHours(saat);
+    hedefTarih.setUTCMinutes(dakika);
+    hedefTarih.setUTCSeconds(0);
+    hedefTarih.setUTCMilliseconds(0);
+  
     let hedefekalanzaman = hedefTarih.getTime() - Date.now();
-    if(hedefekalanzaman<0) {
-        hedefekalanzaman = (24*60*60*1000) - (-hedefekalanzaman);
+    if (hedefekalanzaman < 0) {
+      hedefTarih.setUTCDate(hedefTarih.getUTCDate() + 1);
+      hedefekalanzaman = hedefTarih.getTime() - Date.now();
     }
-
+  
     return hedefekalanzaman;
-}
-
+  }
 module.exports = { HedefeKalanZamaniBul };
