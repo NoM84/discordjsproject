@@ -10,12 +10,39 @@ const client = new Client({
         GatewayIntentBits.GuildVoiceStates
     ]
 });
+const { HedefeKalanZamaniBul } = require('./timeutil');
  
 
 client.on('ready',() =>{
     console.log("Merhaba Diyor!");
     client.user.setActivity(`Abd ye selamlar`, { tpye: "STREAMING"})
-})
+
+    const KalanZaman = HedefeKalanZamaniBul(4,17);
+    console.log(KalanZaman);
+    setInterval(() => {
+        client.channels.cache.get('1038461948989288488').send("Hayırlı Sahurlar");
+        
+    }, KalanZaman,24 * 60 * 60 * 1000);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 client.on('messageCreate',message =>{
     if(message.content == 'ping'){
