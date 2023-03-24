@@ -57,7 +57,16 @@ client.on('messageCreate',message =>{
     if(message.content.toLowerCase() == "aga"){
         message.reply("Efendim")
     }
-    
+    if(message.content.toLowerCase() == "biraz nostalji göster"){
+        message.reply("Tamam")
+        message.channel.send({ files: ['https://i.hizliresim.com/f8k08tw.jpg']}) //1
+        message.channel.send({ files: ['https://i.hizliresim.com/qowv0x8.jpg']}) //2
+        message.channel.send({ files: ['https://i.hizliresim.com/fic02bc.jpg']}) //3
+        message.channel.send({ files: ['https://i.hizliresim.com/3ea6wpc.jpg']}) //4
+        message.channel.send({ files: ['https://i.hizliresim.com/hvt4rkz.jpg']}) //5
+        message.channel.send({ files: ['https://i.hizliresim.com/cz2c8p2.jpg']}) //6
+        message.channel.send({ files: ['https://i.hizliresim.com/9w5dnre.jpg']}) //7
+    }
     
 
 
