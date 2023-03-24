@@ -17,7 +17,7 @@ client.on('ready',() =>{
     console.log("Merhaba Diyor!");
     client.user.setActivity(`Abd ye selamlar`, { tpye: "STREAMING"})
 
-    const KalanZaman = HedefeKalanZamaniBul(4,17);
+    const KalanZaman = HedefeKalanZamaniBul(2,30);
     console.log(KalanZaman);
     setInterval(() => {
         client.channels.cache.get('1038461948989288488').send("Hayırlı Sahurlar");
