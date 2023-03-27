@@ -152,6 +152,10 @@ client.on('messageCreate',message =>{
         message.react("🇦")
         message.react("🇸")
     }
+
+    if(message.channel.id == '1088457124230742067') {
+        client.channels.cache.get('1038461948989288488').send(message.content);
+    }
     
 
 
