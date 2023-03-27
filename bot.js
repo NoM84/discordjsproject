@@ -10,7 +10,7 @@ const client = new Client({
         GatewayIntentBits.GuildVoiceStates
     ]
 });
- 
+
 
 client.on('ready',() =>{
     console.log("Merhaba Diyor!");
@@ -18,8 +18,6 @@ client.on('ready',() =>{
 });
 
 var kontrol = 0;
-
-
 
 
 
@@ -58,6 +56,22 @@ client.on('messageCreate',message =>{
             message.author.send("ping");
         }
 
+        if(message.content.toLowerCase().startsWith("!söyle ")) {
+            let yazi = message.content.substring(7);
+            message.reply(yazi);
+        }
+        
+        if(message.content.startsWith("!mesaj ")) {
+            let mesaj = message.content.substring(7);
+            const startindex = mesaj.indexOf('@');
+            const endindex = mesaj.indexOf('>');
+            const gonderilecekid = mesaj.substring(startindex+1,endindex);
+            const ham_mesaj = mesaj.substring(endindex+1);
+            const kullanici = client.users.cache.get(gonderilecekid);
+            kullanici.send(ham_mesaj);
+        }
+
+
     }
     
     
@@ -75,7 +89,6 @@ client.on('messageCreate',message =>{
             message.author.send("hanifi (içeren her kelime)");
             message.author.send("iki tane ince içeren her kelime");
             message.author.send("naber aga (=)");
-            message.author.send("sik kelimesi içeren her cümle");
             message.author.send("aga içeren her cümle");
             message.author.send("biraz nostalji göster (=)");
 
@@ -89,7 +102,10 @@ client.on('messageCreate',message =>{
         }
 
         if(message.content.toLowerCase() == "billurunu kemireyim"){
-            message.reply("Olur")
+            message.react("🇴")
+            message.react("🇱")
+            message.react("🇺")
+            message.react("🇷")
         }
 
         if((message.content.includes("hanifi"))||(message.content.includes("Hanifi"))){
