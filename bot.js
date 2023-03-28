@@ -14,7 +14,7 @@ const client = new Client({
 
 client.on('ready',() =>{
     console.log("Merhaba Diyor!");
-    client.user.setActivity(`Abd ye selamlar`, { tpye: "STREAMING"})
+    client.user.setActivity(`Age of History II`, { tpye: "STREAMING"})
 });
 
 var kontrol = 0;
